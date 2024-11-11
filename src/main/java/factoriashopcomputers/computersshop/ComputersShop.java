@@ -32,7 +32,7 @@ public class ComputersShop {
                 ", price=" + price + "]";
         }
 
-        // Método equals para comparación en los tests
+        
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;

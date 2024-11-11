@@ -55,7 +55,6 @@ public void testSearchComputer() {
     
 }
 
-
 @BeforeEach
 public void shop() {
 computer = new Computer("Some Name", "Dell", 16, "Intel i7", "Windows 10", 1000.0);
@@ -95,19 +94,19 @@ public void compare() {
 
 @Test
 public void testSameObject() {
-    // Línea 1: "if (this == o) return true;"
+
     assertTrue(computer1.equals(computer1), "equals debería devolver true al comparar el objeto consigo mismo.");
 }
 
 @Test
 public void testNullObject() {
-    // Línea 2: "if (o == null || getClass() != o.getClass()) return false;"
+    
     assertFalse(computer1 == null, "equals debería devolver false al comparar con null.");
 }
 
 @Test
 public void testDifferentObject() {
-    // Línea 2: "if (o == null || getClass()!= o.getClass()) return false;"
+    
     Computer differentClassObject = new Computer("Some Name", "NotAComputer", 16, "Intel i5", "Windows 10", 1000.0);
     assertFalse(computer1.equals(differentClassObject), "equals debería devolver false al comparar con un objeto de una clase diferente.");
 }
@@ -120,7 +119,7 @@ public void testDifferentClass() {
 
 @Test
 public void testEqualMemorySize() {
-    // Línea 4: "return memorySize == computer.memorySize && ..."
+
     assertFalse(computer1.equals(computer2), "equals debería devolver true si todos los atributos son iguales.");
     Computer differentMemorySize = new Computer("Dell", "Some Name", 32, "Intel i7", "Windows 10", 1000.0);
     assertFalse(computer1.equals(differentMemorySize), "equals debería devolver false si el tamaño de memoria es diferente.");
@@ -128,28 +127,28 @@ public void testEqualMemorySize() {
 
 @Test
 public void testEqualPrice() {
-    // Línea 5: "Double.compare(computer.price, price) == 0 && ..."
+    
     Computer differentPrice = new Computer("Some Name", "Dell", 16, "Intel i7", "Windows 10", 1200.0);
     assertFalse(computer1.equals(differentPrice), "equals debería devolver false si el precio es diferente.");
 }
 
 @Test
 public void testEqualBrand() {
-    // Línea 6: "Objects.equals(brand, computer.brand) && ..."
+    
     Computer differentBrand = new Computer("Some Name", "HP", 16, "Intel i7", "Windows 10", 1000.0);
     assertFalse(computer1.equals(differentBrand), "equals debería devolver false si la marca es diferente.");
 }
 
 @Test
 public void testEqualProcessor() {
-    // Línea 7: "Objects.equals(processor, computer.processor) && ..."
+    
     Computer differentProcessor = new Computer("Some Name", "Dell", 16, "Intel i5", "Windows 10", 1000.0);
     assertFalse(computer1.equals(differentProcessor), "equals debería devolver false si el procesador es diferente.");
 }
 
 @Test
 public void testEqualOperatingSystem() {
-    // Línea 8: "Objects.equals(operatingSystem, computer.operatingSystem);"
+
     Computer differentOperatingSystem = new Computer("Some Name", "Dell", 16, "Intel i7", "Linux", 1000.0);
     assertFalse(computer1.equals(differentOperatingSystem), "equals debería devolver false si el sistema operativo es diferente.");
 }
@@ -177,9 +176,6 @@ public void testEqualOperatingSystem() {
         
         assertNotEquals(computer1.hashCode(), computer3.hashCode(), "Los hashCode deben ser diferentes");
     }
-
-
-
 
 
     @BeforeEach
@@ -210,7 +206,7 @@ public void testEqualOperatingSystem() {
         assertEquals(expectedString, computerWithNulls.toString(), "El método toString() no maneja correctamente los valores nulos.");
     }
 
-    // Test con valores vacíos
+    
     @Test
     void testToStringWithEmptyValues() {
         
